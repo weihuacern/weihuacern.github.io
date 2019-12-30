@@ -1,0 +1,62 @@
+---
+layout: page
+title: About
+permalink: /about/
+---
+<style>
+p {margin-right:20px; display:inline;}
+</style>
+I am a Ph.D. in high energy physics, currently working as a software engineer.
+<BR>
+<BR><br>
+Email: weihua19900704@gmail.com
+
+<br>
+<hr>
+<h3>SKILLS</h3>
+<ul>
+	<li>Programming Languages: Python, Golang, C/C++</li>
+	<li>Familiar Projects: Apache Spark, Apache Hadoop, HDFS, Apache Cassandra, Django</li>
+	<li>Development Tools: Makefile, GDB, Git, Vim</li>
+</ul>
+<br>
+<hr>
+<h3>WORK EXPERIENCE</h3>
+<div style="width:100%;">
+	<div style="width:70%;"><p>2018.6 - Present</p><p>Helios Data Inc</p><p>Software Engineer</p></div>
+	<div style="padding-left:5%;">
+		<ul>
+			<li>Apache Spark pipeline development and optimization</li>
+		</ul>
+	</div>
+</div>
+<br>
+<hr>
+<h3>PUBLICATIONS AND PRESENTATIONS</h3>
+<div style="width:100%;">
+	<div style="padding-left:5%;">
+		<ul>
+		    <li><p>2017</p><p><a href="https://cds.cern.ch/record/2679500">Search for Supersymmetry in Proton-Proton Collisions at a Center-of-Mass Energy of 13 TeV with a Customized Top Quark Tagger in the All-Hadronic Final State</a></p></li>
+		</ul>
+	</div>
+</div>
+<br>
+<hr>
+<h3>EDUCATION</h3>
+<div style="width:100%;">
+	<div style="width:70%;"><p>2012.9 - 2017.12</p><p>University of California, Riverside</p></div>
+	<div style="padding-left:5%;">
+		<ul>
+			<li>Ph.D. thesis: Search for Supersymmetry in Proton-Proton Collisions at a Center-of-Mass Energy of 13 TeV with a Customized Top Quark Tagger in the All-Hadronic Final State</li>
+		</ul>
+	</div>
+	<div style="width:70%;"><p>2008.9 - 2012.7</p><p>University of science and technology of China</p></div>
+	<div style="padding-left:5%;">
+		<ul>
+			<li>Major in Theoritical physics.</li>
+		</ul>
+	</div>
+</div>
+<br>
+<hr>
+<hr>
