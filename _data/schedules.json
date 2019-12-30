@@ -1,0 +1,31 @@
+[
+	{
+		"day": "Monday",
+		"plan":"Workday",
+		"status":"Not Started"
+	},{
+		"day": "Tuesday",
+		"plan":"Workday",
+		"status":"Not Started"
+	},{
+		"day": "Wednesday",
+		"plan":"Workday",
+		"status":"Not started"
+	},{
+		"day": "Thursday",
+		"plan":"Workday",
+		"status":"Not started"
+	},{
+		"day": "Friday",
+		"plan":"Workday",
+		"status":"Not started"
+	},{
+		"day": "Saturday",
+		"plan":"Playday",
+		"status":"Not started"
+	},{
+		"day": "Sunday",
+		"plan":"Playday",
+		"status":"Not started"
+	}
+]

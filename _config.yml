@@ -1,0 +1,53 @@
+title: Hua Wei's blog
+description: Hua Wei's blog about his works.
+author: Hua Wei
+github: https://github.com/weihuacern
+about: Hua was a experimental particle phycist worked at CERN, Geneva. Now he worked at Bay Area as a software engineer. 
+disqus_shortname: huawei
+google_analytics: UA-26152490
+avatar_url: /static/img/avatar.jpg
+
+enableTags: true
+tagarray: []
+permalink: /:year/:month/:day/:title
+
+collections:
+  project:
+    output: true
+    permalink: /project/:path/
+
+social:
+    - icon: fa-linkedin
+      link: "https://www.linkedin.com/in/hua-wei-52664482/"
+    - icon: fa-github
+      link: "https://github.com/weihuacern"
+    - icon: fa-instagram
+      link: "https://www.instagram.com/weihua19900704"
+
+urls:
+    - text: About Me
+      url: /about/
+    - text: My Projects
+      url: /projects/
+    - text: Category
+      url: /category
+    - text: Subscribe
+      url: /subscribe
+
+url: "https://weihuacern.github.io"
+baseurl: ""
+posts_img_path: "/static/img"
+paginate: 20
+per_page: 20
+paginate_path: "/page/:num/"
+markdown: kramdown
+plugins:
+  - jekyll-paginate
+  - jekyll-gist
+
+compress_html:
+  clippings: all
+  comments: ["<!-- ", " -->"]
+  endings: all
+  ignore:
+    envs: ['development']
