@@ -50,7 +50,7 @@ Email: weihua19900704@gmail.com
 			<li>Ph.D. thesis: Search for Supersymmetry in Proton-Proton Collisions at a Center-of-Mass Energy of 13 TeV with a Customized Top Quark Tagger in the All-Hadronic Final State</li>
 		</ul>
 	</div>
-	<div style="width:70%;"><p>2008.9 - 2012.7</p><p>University of science and technology of China</p></div>
+	<div style="width:70%;"><p>2008.9 - 2012.7</p><p>University of Science and Technology of China</p></div>
 	<div style="padding-left:5%;">
 		<ul>
 			<li>Major in Theoritical physics.</li>
