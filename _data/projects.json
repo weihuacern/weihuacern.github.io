@@ -5,5 +5,19 @@
 		"url": "https://github.com/weihuacern/kaggle_PSDPKernelGit",
 		"date": "December 2017",
 		"tags": ["Kaggle", "Machine Learning", "Python"]
+	},
+	{
+		"name": "Kaggle Competition: Cdiscount’s Image Classification Challenge",
+		"image": "cdiscount-vector-logo.png",
+		"url": "https://github.com/weihuacern/kaggle_CICCKernelGit",
+		"date": "January 2018",
+		"tags": ["Kaggle", "Machine Learning", "Python"]
+	},
+	{
+		"name": "Kaggle Competition: Understanding Clouds from Satellite Images",
+		"image": "cloud-image-vector-logo.png",
+		"url": "hhttps://github.com/weihuacern/kaggle_CloudImage",
+		"date": "September 2019",
+		"tags": ["Kaggle", "Machine Learning", "Python"]
 	}
 ]
