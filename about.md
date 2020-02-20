@@ -6,7 +6,7 @@ permalink: /about/
 <style>
 p {margin-right:20px; display:inline;}
 </style>
-I am a Ph.D. in high energy physics, currently working as a software engineer.
+I was a Ph.D. in high energy physics. Now I am working as a software engineer.
 <BR>
 <BR><br>
 Email: weihua19900704@gmail.com
@@ -16,8 +16,8 @@ Email: weihua19900704@gmail.com
 <h3>SKILLS</h3>
 <ul>
 	<li>Programming Languages: Python, Golang, C/C++</li>
-	<li>Familiar Projects: Apache Spark, Apache Hadoop, HDFS, Apache Cassandra, Django</li>
-	<li>Development Tools: Makefile, GDB, Git, Vim</li>
+	<li>Familiar Projects: Apache Spark, Apache HDFS, Apache Cassandra, Apache Kafka, Django</li>
+	<li>Development Tools: Makefile, Git, Shell, Vim</li>
 </ul>
 <br>
 <hr>
@@ -26,7 +26,8 @@ Email: weihua19900704@gmail.com
 	<div style="width:70%;"><p>2018.6 - Present</p><p>Helios Data Inc</p><p>Software Engineer</p></div>
 	<div style="padding-left:5%;">
 		<ul>
-			<li>Apache Spark pipeline development and optimization</li>
+			<li>Data pipeline (Apache Spark, Apache Kafka, Apache Cassandra, Apache HDFS) development and optimization</li>
+			<li>API server (Django and Go/Gin) development and optimization</li>
 		</ul>
 	</div>
 </div>
