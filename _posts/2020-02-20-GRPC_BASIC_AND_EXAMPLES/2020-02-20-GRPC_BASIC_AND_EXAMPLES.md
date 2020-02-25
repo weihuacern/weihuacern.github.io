@@ -11,11 +11,11 @@ abstract_img: "/assets/20200220_GRPC_BASIC_AND_EXAMPLES/gRPC-abs.png"
 
 ## What is gRPC?
 
-First, let's disscuss what is gRPC. As described in [wikipedia](https://en.wikipedia.org/wiki/GRPC), gRPC is an open source remote procedure call (RPC) system, which is based on HTTP/2 for transport, and Proto buffers as interface description language.
+First, let's disscuss what is **gRPC**. As described in [wikipedia](https://en.wikipedia.org/wiki/GRPC), gRPC is an open source remote procedure call (RPC) system, which is based on **HTTP/2** for transport, and **Proto buffers** as interface description language.
 
-HTTP/2 is a standard and HTTP protocol that well-known to proxies, firewalls and many software tools. Its streaming nature suits the needs of data transportation with multiplexing implemented.
+[HTTP/2](https://developers.google.com/web/fundamentals/performance/http2) is a standard and HTTP protocol that well-known to proxies, firewalls and many software tools. Its streaming nature suits the needs of data transportation with multiplexing implemented.
 
-Proto buffers play as an IDL (interface definition language) and encoding layer, which bring flexibility message description to support multiple programming languages and efficient serialization algorithms to gRPC framework.
+[Proto buffers](https://developers.google.com/protocol-buffers) play as an IDL (interface definition language) and encoding layer, which bring flexibility message description to support multiple programming languages and efficient serialization algorithms to gRPC framework.
 
 Given the benefits from both HTTP/2 and Proto buffers, gRPC is a good candidate of microservices communication framework.
 
@@ -27,14 +27,14 @@ After we have an overview about gRPC, let's talk about the benefits that we can 
 
 gRPC is not the only candidate of microservices communication framework: one can use JSON/XML based HTTP server to transport information also. However, as an advanced RPC framework, there are several advantages of gRPC over JSON/XML based HTTP server:
 
-- Smaller data size: Since gRPC is using Proto buffers as interface description language, gRPC can benefit from Proto buffers on the aspect of data size. According to [Proto buffers official document](https://developers.google.com/protocol-buffers/docs/overview#whynotxml), Proto buffers are 3 to 10 times smaller than XML data when expressing same data.
-- Faster speed: Since the data size is smaller, the Proto buffers can transport more information in same time with same network bendwidth. The binary encoding algorithm makes it faster to be serilized. Moreover, the multiplexing of HTTP/2 also improve the message transportation efficiencies. According to [Proto buffers official document](https://developers.google.com/protocol-buffers/docs/overview#whynotxml), Proto buffers are 20 to 100 times faster than XML data.
-- Generated programmable object: People usually write a program object that corresponding to the data content when implement JSON/XML based RESTful server. One may need to change this data related program object in several places when the data definition changed. However, this data format related programmable object is automatically generated, and therefore only change of Protobuf files is needed.
+- **Smaller data size**: Since gRPC is using Proto buffers as interface description language, gRPC can benefit from Proto buffers on the aspect of data size. According to [Proto buffers official document](https://developers.google.com/protocol-buffers/docs/overview#whynotxml), Proto buffers are 3 to 10 times smaller than XML data when expressing same data.
+- **Faster speed**: Since the data size is smaller, the Proto buffers can transport more information in same time with same network bendwidth. The binary encoding algorithm makes it faster to be serilized. Moreover, the multiplexing of HTTP/2 also improve the message transportation efficiencies. According to [Proto buffers official document](https://developers.google.com/protocol-buffers/docs/overview#whynotxml), Proto buffers are 20 to 100 times faster than XML data.
+- **Generated programmable object**: People usually write a program object that corresponding to the data content when implement JSON/XML based RESTful server. One may need to change this data related program object in several places when the data definition changed. However, this data format related programmable object is automatically generated, and therefore only change of Protobuf files is needed.
 
 Moreover, there are several other benefits by using gRPC:
 
-- Compatible with JSON based HTTP server: Although it is better to have one single communication framework in the full system, two communication frameworks may existed at same time in a system during system migration. One can move from one microservice to another to replace core communication framework gradually without breaking system.
-- API Documentation: API documentation is a must have for collaborative code development. For example, one can use [Swagger](https://swagger.io/) as a RESTful based API documentation tool. However, both API documentation and code implementation may need to be revisited if one changed the API data schema. However, since the programmable object is automatically generated in gRPC framework, both the documentation and programmable object can be modified accrodingly once Proto file have been changed.
+- **Compatible with JSON based HTTP server**: Although it is better to have one single communication framework in the full system, two communication frameworks may existed at same time in a system during system migration. One can move from one microservice to another to replace core communication framework gradually without breaking system.
+- **API Documentation**: API documentation is a must have for collaborative code development. For example, one can use [Swagger](https://swagger.io/) as a RESTful based API documentation tool. However, both API documentation and code implementation may need to be revisited if one changed the API data schema. However, since the programmable object is automatically generated in gRPC framework, both the documentation and programmable object can be modified accrodingly once Proto file have been changed.
 
 ## How to setup gRPC server and client?
 
@@ -120,31 +120,76 @@ message DeleteAuthUserReply {
 }
 ```
 
-The source code for demonstration can be found in [this github repo](https://github.com/weihuacern/grpc_playground).
+Source code for demonstration can be found in [this github repo](https://github.com/weihuacern/grpc_playground). One may need to install [dependencies](https://github.com/weihuacern/grpc_playground#dependencies) before compiling.
 
 ### gRPC example in Golang
 
 - To compile gRPC server and client with Golang: 
-```make prep;make rpc_go```
+```bash
+make prep
+make rpc_go
+```
 - To start Golang gRPC server: 
-```cd server/go;./server```
-- To test Golang gRPC client on gRPC server: 
-```cd client/go;./client```
+```bash
+cd server/go
+./server
+```
+- To test Golang gRPC client by querying gRPC server: 
+```bash
+cd client/go
+./client
+```
 
 ### gRPC example in Python
 
 - To compile gRPC server and client with Python: 
-```make prep;make rpc_python```
+```bash
+make prep
+make rpc_python
+```
 - To start Python gRPC server: 
-```cd server/python;python3 server.pyz```
-- To test Python gRPC client on gRPC server: 
-```cd client/python;python3 client.pyz```
+```bash
+cd server/python
+python3 server.pyz
+```
+- To test Python gRPC client by querying gRPC server: 
+```bash
+cd client/python
+python3 client.pyz
+```
 
 ### gRPC example in Java
 
 - To compile gRPC server and client with Java: 
-```make prep;make rpc_java```
+```bash
+make prep
+make rpc_java
+```
 - To start Java gRPC server: 
-```cd server/java/server/target;java -jar server-1.0-SNAPSHOT-jar-with-dependencies.jar```
-- To test Java gRPC client on gRPC server: 
-```cd client/java/client/target;java -jar client-1.0-SNAPSHOT-jar-with-dependencies.jar```
+```bash
+cd server/java/server/target
+java -jar server-1.0-SNAPSHOT-jar-with-dependencies.jar
+```
+- To test Java gRPC client by querying gRPC server: 
+```bash
+cd client/java/client/target
+java -jar client-1.0-SNAPSHOT-jar-with-dependencies.jar
+```
+
+### gRPC example in NodeJS
+
+- To compile gRPC server and client with NodeJS: 
+```bash
+make prep
+make rpc_js
+```
+- To start NodeJS gRPC server: 
+```bash
+cd server/js
+./server.exe
+```
+- To test NodeJS gRPC client by querying gRPC server: 
+```bash
+cd client/js
+./client.exe
+```
