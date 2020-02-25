@@ -16,7 +16,7 @@
 	{
 		"name": "Kaggle Competition: Understanding Clouds from Satellite Images",
 		"image": "cloud-image-vector-logo.png",
-		"url": "hhttps://github.com/weihuacern/kaggle_CloudImage",
+		"url": "https://github.com/weihuacern/kaggle_CloudImage",
 		"date": "September 2019",
 		"tags": ["Kaggle", "Machine Learning", "Python"]
 	}
