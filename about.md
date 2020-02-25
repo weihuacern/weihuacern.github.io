@@ -16,7 +16,7 @@ Email: weihua19900704@gmail.com
 <h3>SKILLS</h3>
 <ul>
 	<li>Programming Languages: Python, Golang, C/C++</li>
-	<li>Familiar Projects: Apache Spark, Apache HDFS, Apache Cassandra, Apache Kafka, Django</li>
+	<li>Familiar Projects: Apache Spark, Apache HDFS, Apache Cassandra, Apache Kafka, Django, gRPC</li>
 	<li>Development Tools: Makefile, Git, Shell, Vim</li>
 </ul>
 <br>
