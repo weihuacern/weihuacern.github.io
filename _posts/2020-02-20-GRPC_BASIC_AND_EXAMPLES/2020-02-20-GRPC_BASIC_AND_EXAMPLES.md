@@ -7,9 +7,7 @@ abstract: "In this article, a brief introduction on gRPC and benefits of using g
 abstract_img: "/assets/20200220_GRPC_BASIC_AND_EXAMPLES/gRPC-abs.png"
 ---
 
-![AbstractImage](/assets/20200220_GRPC_BASIC_AND_EXAMPLES/gRPC-abs.png)
-
-## What is gRPC?
+## What is gRPC
 
 First, let's disscuss what is **gRPC**. As described in [wikipedia](https://en.wikipedia.org/wiki/GRPC), gRPC is an open source remote procedure call (RPC) system, which is based on **HTTP/2** for transport, and **Proto buffers** as interface description language.
 
@@ -19,7 +17,7 @@ First, let's disscuss what is **gRPC**. As described in [wikipedia](https://en.w
 
 Given the benefits from both HTTP/2 and Proto buffers, gRPC is a good candidate of microservices communication framework.
 
-## Why gRPC?
+## Why gRPC
 
 After we have an overview about gRPC, let's talk about the benefits that we can gain by using gRPC. In this section, we demonstrate the advantages of gRPC as microservices communication framework first, and then, several minor concerns are also listed as gRPC advantages.
 
@@ -36,7 +34,7 @@ Moreover, there are several other benefits by using gRPC:
 - **Compatible with JSON based HTTP server**: Although it is better to have one single communication framework in the full system, two communication frameworks may existed at same time in a system during system migration. One can move from one microservice to another to replace core communication framework gradually without breaking system.
 - **API Documentation**: API documentation is a must have for collaborative code development. For example, one can use [Swagger](https://swagger.io/) as a RESTful based API documentation tool. However, both API documentation and code implementation may need to be revisited if one changed the API data schema. However, since the programmable object is automatically generated in gRPC framework, both the documentation and programmable object can be modified accrodingly once Proto file have been changed.
 
-## How to setup gRPC server and client?
+## How to setup gRPC server and client
 
 Finally, after understand what and why about gRPC, let's do a hands-on section to play with gRPC server and client.
 
@@ -51,6 +49,7 @@ Generally speaking, one can setup its gRPC server and client with three steps:
 To be specific, let's go over several examples to setup gRPC server and client with different programming languages.
 
 In this demo, a gRPC service with authentication methods and corresponding data messages are defined:
+
 ```protobuf
 syntax = "proto3";
 
@@ -124,17 +123,22 @@ Source code for demonstration can be found in [this github repo](https://github.
 
 ### gRPC example in Golang
 
-- To compile gRPC server and client with Golang: 
+- To compile gRPC server and client with Golang:
+
 ```bash
 make prep
 make rpc_go
 ```
-- To start Golang gRPC server: 
+
+- To start Golang gRPC server:
+
 ```bash
 cd server/go
 ./server
 ```
-- To test Golang gRPC client by querying gRPC server: 
+
+- To test Golang gRPC client by querying gRPC server:
+
 ```bash
 cd client/go
 ./client
@@ -142,17 +146,22 @@ cd client/go
 
 ### gRPC example in Python
 
-- To compile gRPC server and client with Python: 
+- To compile gRPC server and client with Python:
+
 ```bash
 make prep
 make rpc_python
 ```
-- To start Python gRPC server: 
+
+- To start Python gRPC server:
+
 ```bash
 cd server/python
 python3 server.pyz
 ```
-- To test Python gRPC client by querying gRPC server: 
+
+- To test Python gRPC client by querying gRPC server:
+
 ```bash
 cd client/python
 python3 client.pyz
@@ -160,17 +169,22 @@ python3 client.pyz
 
 ### gRPC example in Java
 
-- To compile gRPC server and client with Java: 
+- To compile gRPC server and client with Java:
+
 ```bash
 make prep
 make rpc_java
 ```
-- To start Java gRPC server: 
+
+- To start Java gRPC server:
+
 ```bash
 cd server/java/server/target
 java -jar server-1.0-SNAPSHOT-jar-with-dependencies.jar
 ```
-- To test Java gRPC client by querying gRPC server: 
+
+- To test Java gRPC client by querying gRPC server:
+
 ```bash
 cd client/java/client/target
 java -jar client-1.0-SNAPSHOT-jar-with-dependencies.jar
@@ -178,17 +192,22 @@ java -jar client-1.0-SNAPSHOT-jar-with-dependencies.jar
 
 ### gRPC example in NodeJS
 
-- To compile gRPC server and client with NodeJS: 
+- To compile gRPC server and client with NodeJS:
+
 ```bash
 make prep
 make rpc_js
 ```
-- To start NodeJS gRPC server: 
+
+- To start NodeJS gRPC server:
+
 ```bash
 cd server/js
 ./server.exe
 ```
-- To test NodeJS gRPC client by querying gRPC server: 
+
+- To test NodeJS gRPC client by querying gRPC server:
+
 ```bash
 cd client/js
 ./client.exe
