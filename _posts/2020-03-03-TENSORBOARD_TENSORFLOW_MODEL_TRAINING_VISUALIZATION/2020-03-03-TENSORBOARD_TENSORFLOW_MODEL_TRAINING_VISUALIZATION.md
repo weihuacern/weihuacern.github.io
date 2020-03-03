@@ -15,7 +15,7 @@ Given the high time consumption of the deep neural network training nowadays, th
 
 In TensorBoard, one can monitor scalar (loss, accuracy, etc.) evolution along with epoch, check model parameters distribution and histogram evolution along with epoch, view model graphs, and other self-defined features that written into TensorBoard logs. etc.. All these features will be demonstrated with code snippets in next section.
 
-## An example to visualize Tensorflow model training with TensorBoard
+## Visualize Tensorflow model training with TensorBoard
 
 In this section, both default features that already defined in [TensorBoard callback function](https://www.tensorflow.org/api_docs/python/tf/keras/callbacks/TensorBoard) and self-defined features that customized by user are demonstrated as model training monitoring.
 
@@ -95,7 +95,7 @@ def lr_sche(epoch):
 lr_callback = tf.keras.callbacks.LearningRateScheduler(lr_sche)
 ```
 
-NOTE: Forgive my messy implementation. To write a decent customized callback function class, please refer to official [Tensorflow callback class](https://github.com/tensorflow/tensorflow/blob/v2.1.0/tensorflow/python/keras/callbacks.py#L1400-L1836).
+NOTE: Forgive my messy implementation. To write a decent customized callback function class, please refer to [official Tensorflow callback class](https://github.com/tensorflow/tensorflow/blob/v2.1.0/tensorflow/python/keras/callbacks.py#L1400-L1836).
 
 ### Model training and monitoring
 
@@ -126,23 +126,31 @@ or in Jupyter notebook with code block:
 %tensorboard --logdir logs/
 ```
 
-The user interface will pop out after commands above executed. The default scalar, like loss and accuracy both train data and validation data looks like:
+. User interface will pop out after commands above executed.
 
-![AAA](/assets/20200303_TENSORBOARD_TENSORFLOW_MODEL_TRAINING_VISUALIZATION/tb-scalar-default.png)
+The default scalar, like loss and accuracy both train data and validation data looks like:
 
-and self-defined scalar, learning rate, can be monitored:
+![TensorBoard scalar, default](/assets/20200303_TENSORBOARD_TENSORFLOW_MODEL_TRAINING_VISUALIZATION/tb-scalar-default.png)
 
-![AAA](/assets/20200303_TENSORBOARD_TENSORFLOW_MODEL_TRAINING_VISUALIZATION/tb-scalar-lr.png)
+. From this plot, we can see that the loss does not decrease too much after epoch 12, and validation accuracy is lower than train accuracy, which imply a more complicated model is needed to improve the accuracy.
+
+And self-defined scalar, learning rate, can be monitored:
+
+![TensorBoard scalar, learning rate](/assets/20200303_TENSORBOARD_TENSORFLOW_MODEL_TRAINING_VISUALIZATION/tb-scalar-lr.png)
+
+, which indicates that the learning rate is changed as expected when training epoch increased.
 
 Moreover, the distribution and histogram of model parameters are demonstrated like:
 
-![AAA](/assets/20200303_TENSORBOARD_TENSORFLOW_MODEL_TRAINING_VISUALIZATION/tb-distro-model-para.png)
+![TensorBoard distribution, model parameters](/assets/20200303_TENSORBOARD_TENSORFLOW_MODEL_TRAINING_VISUALIZATION/tb-distro-model-para.png)
 
-![AAA](/assets/20200303_TENSORBOARD_TENSORFLOW_MODEL_TRAINING_VISUALIZATION/tb-histo-model-para.png)
+![TensorBoard histogram, model parameters](/assets/20200303_TENSORBOARD_TENSORFLOW_MODEL_TRAINING_VISUALIZATION/tb-histo-model-para.png)
+
+, which demonstrate the model parameters in all layers as model being trained.
 
 Finally, the model architecture can be found in graph tab also:
 
-![AAA](/assets/20200303_TENSORBOARD_TENSORFLOW_MODEL_TRAINING_VISUALIZATION/tb-graph-model.png)
+![TensorBoard graph, model](/assets/20200303_TENSORBOARD_TENSORFLOW_MODEL_TRAINING_VISUALIZATION/tb-graph-model.png)
 
 ### Trouble shooting
 
