@@ -159,3 +159,7 @@ In case of missing data in display or other issues, one can use the following co
 ```bash
 tensorboard --inspect --logdir logs/
 ```
+
+## More readings
+
+- [TensorBoard guide in Tensorflow](https://www.tensorflow.org/tensorboard/get_started)

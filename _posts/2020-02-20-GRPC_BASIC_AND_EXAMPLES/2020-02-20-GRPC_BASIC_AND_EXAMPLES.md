@@ -212,3 +212,8 @@ cd server/js
 cd client/js
 ./client.exe
 ```
+
+## More readings
+
+- [Protocol Buffers official guides](https://developers.google.com/protocol-buffers/docs/overview)
+- [gRPC official tutorials](https://grpc.io/docs/tutorials/)
