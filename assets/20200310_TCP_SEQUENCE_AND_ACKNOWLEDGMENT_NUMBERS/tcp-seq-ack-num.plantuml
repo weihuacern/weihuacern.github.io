@@ -1,0 +1,24 @@
+@startuml tcp-seq-ack-num
+== TCP 3-Way Handshake ==
+client -[#Red]> server: <color:red>SYN, (seq = 0, ack = None)</color>
+note left: connect()
+server --[#Blue]> client: <color:blue>SYN-ACK, (seq = 0, ack = 1)</color>
+note right: accept()
+client -[#Red]> server: <color:red>ACK, (seq = seq + 1, ack = 1)</color>
+== TPC Data Transportation ==
+client -[#Red]> server: <color:red>PSH-ACK, (seq, ack)</color>
+note left: write(data1)
+server --[#Blue]> client: <color:blue>ACK, (seq = seq + 1, ack = ack + size of data1 in byte)</color>
+client -[#Red]> server: <color:red>PSH-ACK, (seq = seq + size of data1 in byte, ack)</color>
+note left: write(data2)
+server --[#Blue]> client: <color:blue>ACK, (seq, ack = ack + size of data2 in byte)</color>
+client -[#Red]> server: <color:red>PSH-ACK, (seq = seq + size of data2 in byte, ack)</color>
+note left: write(data3)
+server --[#Blue]> client: <color:blue>ACK, (seq, ack = ack + size of data3 in byte)</color>
+== TCP Connection Termination ==
+client -[#Red]> server: <color:red>FIN-ACK, (seq = seq + size of data3 in byte, ack)</color>
+note left: close()
+server --[#Blue]> client: <color:blue>FIN-ACK, (seq, ack = ack + 1)</color>
+note right: close()
+client -[#Red]> server: <color:red>ACK, (seq = seq + 1, ack = ack + 1)</color>
+@enduml
