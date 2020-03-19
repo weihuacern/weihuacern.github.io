@@ -1,0 +1,39 @@
+@startuml java-exec
+skinparam titleBorderRoundCorner 15
+skinparam titleBorderThickness 2
+skinparam titleBorderColor Black
+skinparam titleBackgroundColor White
+
+title Java Source Code Execution\n Author: Hua Wei
+
+interface "Source File" as SF
+
+component JavaCompiler [
+  <color:Blue>Java Compiler</color>
+    javac
+]
+
+interface "Class File" as CF
+
+package "Java Virtial Machine" {
+  component ClassLoader [
+    <color:Red>Class Loader</color>
+  ]
+  component ByteCodeVerifier [
+    <color:Red>Byte Code Verifier</color>
+  ]
+  component JITCompiler [
+    <color:Red>JIT Compiler</color>
+  ]
+}
+
+[ClassLoader] .down.> [ByteCodeVerifier]
+[ByteCodeVerifier] .down.> [JITCompiler]
+
+interface "Machine Code" as MC
+
+SF -up-> [JavaCompiler] : Compiler loads\n Java source code (.java)
+[JavaCompiler] -up-> CF : Compiler generates\n Java byte code (.class)
+CF -right-> [ClassLoader] : JVM loads\n Java source code
+[JITCompiler] -right-> MC : JVM generates\n machine code
+@enduml
