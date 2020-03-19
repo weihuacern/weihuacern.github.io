@@ -1,0 +1,86 @@
+@startuml jvm-arch
+skinparam titleBorderRoundCorner 15
+skinparam titleBorderThickness 2
+skinparam titleBorderColor Black
+skinparam titleBackgroundColor White
+
+title JVM Architecture Diagram\n Author: Hua Wei
+
+interface "Class File" as CF
+
+package "Class Loader Subsystem" {
+  component Loading [
+    <color:Red>Loading</color>
+    1, BootStrap Class Loader
+    2, Extension Class Loader
+    3, Application Class Loader
+  ]
+  component Linking [
+    <color:Red>Linking</color>
+    1, Verification
+    2, Preparation
+    3, Resolution
+  ]
+  component Initialization [
+    <color:Red>Initialization</color>
+  ]
+}
+
+[Loading] ..> [Linking]
+[Linking] ..> [Initialization]
+
+database "Run-Time Data Areas" {
+  frame "Per-Thread" {
+    component PCRegister [
+      <color:Blue>Program Counter</color>
+      <color:Blue>Register</color>
+
+    ]
+    component StackArea [
+      <color:Blue>Stack Area</color>
+    ]
+    component NativeMethodStack [
+      <color:Blue>Native</color>
+      <color:Blue>Method Stack</color>
+    ]
+  }
+  frame "Common" {
+    component RunTimeConstantPool [
+      <color:Blue>Run-Time</color>
+      <color:Blue>Constant Pool</color>
+    ]
+    component MethodArea [
+      <color:Blue>Method Area</color>
+    ]
+    component HeapArea [
+      <color:Blue>Heap Area</color>
+    ]
+  }
+}
+
+[HeapArea] .left.> [MethodArea] : Contain
+[MethodArea] .left.> [RunTimeConstantPool] : Contain
+
+package "Execution Engine" {
+  component Interpreter [
+    <color:red>Interpreter</color>
+  ]
+  component JITCompiler [
+    <color:red>JIT Compiler</color>
+  ]
+  component GC [
+    <color:red>Garbage Collector</color>
+  ]
+}
+
+[Interpreter] .. [JITCompiler]
+[Interpreter] .. [GC]
+[JITCompiler] .. [GC]
+
+CF --> [Loading] : Read from\n file (.class)
+[Initialization] --> [StackArea] : Write to\n memory
+[Initialization] --> [RunTimeConstantPool] : Write to\n memory
+[HeapArea] -up-> [Interpreter] : Load from\n Young/Old Gen
+[MethodArea] -up-> [Interpreter] : Load from\n Perm Gen
+[GC] -down-> [HeapArea] : Schedule\n Young/Old Gen
+@enduml
