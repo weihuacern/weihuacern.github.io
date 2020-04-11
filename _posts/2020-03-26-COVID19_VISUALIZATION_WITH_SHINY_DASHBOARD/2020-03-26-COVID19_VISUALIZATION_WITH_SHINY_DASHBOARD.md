@@ -45,7 +45,7 @@ Time series is the approach to demonstrate the trend of variables along the time
 Unlike the static table view, it would be a mess to demonstrate all countries all together on the same plot. Therefore, user can select the countries interested to demonstrate on the world time series plot. The user interface only demonstrate the data selected according to user input. A time series with selected countries set is shown below:
 ![World TimeSeries](/assets/20200326_COVID19_VISUALIZATION_WITH_SHINY_DASHBOARD/shiny-covid-19-world-ts.png)
 
-### Geomap
+### Geographic Map
 
 Geographic map is the way to show the distribution of variable across geographic coordinates. The government and people at each country takes the major responsibility to prevent virus from killing people. Therefore, one can easy evaluate the performance of government by checking the confirmed and dead cases per 1 million population. Moreover, the disease evolution along time line can be viewed by a slider bar day by day. A screenshot on total confirmed cases per 1 million people of the world map is listed below:
 ![World GeoMap](/assets/20200326_COVID19_VISUALIZATION_WITH_SHINY_DASHBOARD/shiny-covid-19-world-geomap.png)

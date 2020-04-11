@@ -1,0 +1,32 @@
+@startuml shuffle-component-workflow
+
+title Apache Spark: Shuffle component workflow\n Author: Hua Wei
+
+node "JVM" {
+  [ShuffleWriter] .[#Blue]down.> [DiskBlockObjectWriter]
+  [ShuffleWriter] .[#Blue]down.> [ExternalSorter]
+  [ExternalSorter] .[#Blue]down.> [DiskBlockObjectWriter]
+  [DiskBlockObjectWriter] .[#Blue]down.> [FileChannel]
+  [FileChannel] .[#Green]up.> [ExternalSorter]
+  [FileChannel] .[#Green]up.> [FileSegmentManagedBuffer]
+  [FileChannel] .[#Green]up.> [NettyManagedBuffer]
+  [FileSegmentManagedBuffer] .[#Green]up.> [ShuffleReader]
+  [NettyManagedBuffer] .[#Green]up.> [ShuffleReader]
+}
+
+database "Off-Heap" {
+  [FileChannel] -[#Blue]down-> [ByteBuffer]
+  [ByteBuffer] -[#Green]up-> [FileChannel]
+  [ByteBuffer] .[#Blue]right.> [Local file]
+  [Local file] .[#Green]left.> [ByteBuffer]
+}
+
+note right of [Local file]
+  spark.local.dir
+end note
+
+MapTask -[#Red]down- [ShuffleWriter]
+ReduceTask -[#Red]down- [ShuffleReader]
+MapTask -[#Red]down- [ExternalSorter]
+ReduceTask -[#Red]down- [ExternalSorter]
+@enduml
