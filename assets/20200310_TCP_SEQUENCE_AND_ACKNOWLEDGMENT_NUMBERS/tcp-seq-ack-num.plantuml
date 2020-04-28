@@ -1,4 +1,7 @@
 @startuml tcp-seq-ack-num
+
+title TCP sequence and acknowledge numbers\n Author: Hua Wei
+
 == TCP 3-Way Handshake ==
 client -[#Red]> server: <color:red>SYN, (seq = 0, ack = None)</color>
 note left: connect()
