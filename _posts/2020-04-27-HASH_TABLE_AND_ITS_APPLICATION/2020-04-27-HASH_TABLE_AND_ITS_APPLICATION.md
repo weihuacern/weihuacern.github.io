@@ -2,7 +2,7 @@
 layout: post
 title: "Hash Table and its application"
 date: 2020-04-27
-categories: [Data Structure, Hash Table, Python, Java, Golang]
+categories: [Data Structure, Hash Table]
 abstract: "In this blog, Hash table, as an implementation of associative array, is described in details. Several associative array's Hash table implementations are also described in details as examples."
 abstract_img: "/assets/20200427_HASH_TABLE_AND_ITS_APPLICATION/hash-table-abs.jpg"
 ---

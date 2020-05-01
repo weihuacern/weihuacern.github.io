@@ -65,7 +65,7 @@ int main() {
     struct sockaddr_in servaddr = {
         AF_INET, htons(1111), htonl(INADDR_ANY)
     };
-    bind(listenfd, (const struct sockaddr*)&servaddr, 
+    bind(listenfd, (const struct sockaddr*)&servaddr,
          sizeof(servaddr));
     listen(listenfd, 8);
     int connfd = accept(listenfd, (struct sockaddr*) 0, 0);
