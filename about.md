@@ -15,24 +15,33 @@ Email: weihua19900704@gmail.com
 <hr>
 <h3>SKILLS</h3>
 <ul>
-    <li>Programming Languages: Python, Golang, C/C++, R</li>
-    <li>Familiar Projects: Apache Spark, Apache HDFS, Apache Cassandra, Apache Kafka, Django, gRPC, shiny</li>
+    <li>Programming Languages: Python, Go, Scala, C/C++, R</li>
+    <li>Familiar Projects: Apache Spark, Apache Cassandra, Apache Kafka, Django, gRPC, Grafana</li>
     <li>Development Tools: Makefile, Git, Shell, Vim</li>
 </ul>
 <br>
 <hr>
 <h3>WORK EXPERIENCE</h3>
 <div style="width:100%;">
-    <div style="width:70%;"><p>2020.03 - Present</p><p>Wolfe Research</p><p>Quantitative Software Engineer</p></div>
+    <div style="width:70%;"><p>2020.09 - Present</p><p>Tencent</p><p>Senior Software Engineer</p></div>
     <div style="padding-left:5%;">
         <ul>
-            <li>Develop data visualization dashboard with R, shiny framework</li>
+            <li>Lead the causal inference pipeline project, aim to optimize content producer ecology</li>
+            <li>Develop common software infrastructure, including pipeline packages, visualization application, etc</li>
+            <li>Develop online and offline algorithm to optimize content and media production pipeline</li>
         </ul>
     </div>
-    <div style="width:70%;"><p>2018.06 - 2020.01</p><p>Helios Data Inc</p><p>Software Engineer</p></div>
+    <div style="width:70%;"><p>2020.05 - 2020.08</p><p>Wolfe Research</p><p>Quantitative Software Engineer</p></div>
     <div style="padding-left:5%;">
         <ul>
-            <li>Build and optimize data pipeline with Apache Spark, Apache Kafka, Apache Cassandra and Apache HDFS</li>
+            <li>Lead the attribution library refactor project with Python</li>
+            <li>Develop data visualization dashboard with R/Shiny framework</li>
+        </ul>
+    </div>
+    <div style="width:70%;"><p>2018.05 - 2020.01</p><p>Helios Data Inc</p><p>Software Engineer</p></div>
+    <div style="padding-left:5%;">
+        <ul>
+            <li>Build and optimize data pipeline with Apache Spark, Apache Kafka and Apache Cassandra</li>
             <li>Develop and optimize API server with Django and Go/Gin</li>
         </ul>
     </div>
